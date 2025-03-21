@@ -1,0 +1,52 @@
+.room-details {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+
+  .room-details h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  
+  .room-details h3 {
+    font-size: 20px;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  
+  .feedback-card {
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  
+  .feedback-card:hover {
+    transform: scale(1.02);
+  }
+  
+  
+  .feedback-card p {
+    font-size: 16px;
+    color: #444;
+    margin: 5px 0;
+  }
+  
+  
+  .feedback-card strong {
+    color: #ffcc00; 
+  }
+  

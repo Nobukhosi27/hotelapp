@@ -1,0 +1,16 @@
+<div class="manage-bookings">
+    <h2>Manage Bookings</h2>
+  
+    <div *ngFor="let booking of bookings" class="booking-card">
+      <h3>Room: {{ booking.type }}</h3>
+      <p><strong>Price:</strong> ${{ booking.price }}</p>
+      <p><strong>Booked At:</strong> {{ booking.bookedAt.toDate() | date: 'short' }}</p>
+      <p><strong>Check-In:</strong> {{ booking.checkIn.toDate() | date: 'short' }}</p>
+      <p><strong>Check-Out:</strong> {{ booking.checkOut.toDate() | date: 'short' }}</p>
+      
+      <button *ngIf="!booking.checkIn" (click)="checkIn(booking)">Check In</button>
+      <button *ngIf="booking.checkIn && !booking.checkOut" (click)="checkOut(booking)">Check Out</button>
+      <button (click)="cancelBooking(booking.id!)">Cancel Booking</button>
+    </div>
+  </div>
+  

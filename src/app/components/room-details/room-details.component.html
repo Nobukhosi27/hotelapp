@@ -1,0 +1,13 @@
+<div class="room-details">
+    <h2>Room Details</h2>
+  
+    <h3>Customer Reviews</h3>
+    <div *ngIf="feedbacks$ | async as feedbacks">
+      <div *ngFor="let feedback of feedbacks" class="feedback-card">
+        <p><strong>Rating:</strong> ⭐{{ feedback.rating }}</p>
+        <p>{{ feedback.review }}</p>
+      </div>
+    </div>
+    <app-feedback-form [roomId]="roomId"></app-feedback-form>
+  </div>
+  

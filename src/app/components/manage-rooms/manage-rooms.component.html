@@ -1,0 +1,25 @@
+<div class="manage-rooms">
+    <h2>Manage Rooms</h2>
+    
+    
+    <div>
+      <h3>Add Room</h3>
+      <input type="text" placeholder="Room Type" [(ngModel)]="newRoom.type">
+      <input type="number" placeholder="Price" [(ngModel)]="newRoom.price">
+      <input type="number" placeholder="Capacity" [(ngModel)]="newRoom.capacity">
+      <input type="text" placeholder="Amenities (comma separated)" [(ngModel)]="newRoom.amenities">
+      <button (click)="addRoom()">Add Room</button>
+    </div>
+  
+    
+    <div *ngFor="let room of rooms" class="room-card">
+      <h3>{{ room.type }}</h3>
+      <p>Price: ${{ room.price }}</p>
+      <p>Capacity: {{ room.capacity }}</p>
+      <p>Amenities: {{ room.amenities.join(', ') }}</p>
+      <p>Status: {{ room.isAvailable ? 'Available' : 'Booked' }}</p>
+      <button (click)="editRoom(room)">Edit</button>
+      <button (click)="deleteRoom(room.id!)">Delete</button>
+    </div>
+  </div>
+  

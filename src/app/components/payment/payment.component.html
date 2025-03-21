@@ -1,0 +1,7 @@
+<div class="payment-container">
+  <div *ngIf="paymentId">
+    <p>Payment successful! Payment ID: {{ paymentId }}</p>
+  </div>
+
+  <button (click)="makePayment()" *ngIf="!paymentId">Pay Now</button>
+</div>

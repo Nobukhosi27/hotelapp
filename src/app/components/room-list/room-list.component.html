@@ -1,0 +1,27 @@
+<div class="room-list-container">
+  <h2>Available Rooms</h2>
+
+  <!-- Filters -->
+  <div class="filters">
+    <input type="text" placeholder="Search by type..." [(ngModel)]="searchType" (input)="filterRooms()">
+    <input type="number" placeholder="Max Price" [(ngModel)]="maxPrice" (input)="filterRooms()">
+    <input type="number" placeholder="Min Capacity" [(ngModel)]="minCapacity" (input)="filterRooms()">
+  </div>
+
+  <!-- If the user has a booking, show "View My Booking" -->
+  <div *ngIf="userBookingId" class="booking-section">
+    <p>You have an active booking.</p>
+    <a [routerLink]="['/booking-details', userBookingId]">View My Booking</a>
+  </div>
+
+  <!-- Room List -->
+  <div *ngFor="let room of filteredRooms" class="room-card">
+    <h3>{{ room.type }}</h3>
+    <p><strong>Price:</strong> ${{ room.price }} per night</p>
+    <p><strong>Capacity:</strong> {{ room.capacity }} people</p>
+    <p><strong>Amenities:</strong> {{ room.amenities.join(', ') }}</p>
+
+    <button *ngIf="room.isAvailable && !userBookingId" (click)="bookRoom(room)">Book Now</button>
+    <p *ngIf="!room.isAvailable" class="unavailable">Not Available</p>
+  </div>
+</div>

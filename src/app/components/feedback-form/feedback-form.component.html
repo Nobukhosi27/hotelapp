@@ -1,0 +1,12 @@
+<div class="feedback-form">
+    <h3>Leave a Review</h3>
+    <label>Rating:
+      <select [(ngModel)]="rating">
+        <option *ngFor="let r of [1, 2, 3, 4, 5]" [value]="r">{{ r }}</option>
+      </select>
+    </label>
+  
+    <textarea [(ngModel)]="review" placeholder="Write your review..."></textarea>
+    <button (click)="submitFeedback()">Submit</button>
+  </div>
+  

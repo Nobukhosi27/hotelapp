@@ -1,0 +1,14 @@
+<div *ngIf="booking">
+  <h2>Booking Details</h2>
+
+  <div class="booking-info">
+    <p><strong>Room Type:</strong> {{ booking.type }}</p>
+    <p><strong>Price:</strong> ${{ booking.price }} per night</p>
+    <p><strong>Check-in Date:</strong> {{ booking.checkIn.toDate() | date: 'shortDate' }}</p>
+    <p><strong>Check-out Date:</strong> {{ booking.checkOut.toDate() | date: 'shortDate' }}</p>
+    <p><strong>Booked On:</strong> {{ booking.bookedAt.toDate() | date: 'shortDate' }}</p>
+  </div>
+
+  <!-- Cancel Booking Option -->
+  <button (click)="cancelBooking()">Cancel Booking</button>
+</div>
